@@ -1,0 +1,10 @@
+{
+  "name": "graphql-portfolio",
+  "version": "1.0.0",
+  "description": "My very own graphql portfolio",
+  "main": "index.js",
+  "repository": "https://github.com/SaraVieira/graphql-portfolio",
+  "author": "Sara Vieira",
+  "license": "MIT",
+  "private": false
+}
