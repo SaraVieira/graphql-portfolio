@@ -1,9 +1,9 @@
 const {
   GraphQLSchema,
   GraphQLObjectType,
-  GraphQLInt,
   GraphQLBoolean,
-  GraphQLString
+  GraphQLString,
+  GraphQLList
 } = require('graphql')
 const data = require('./data/main')
 const express = require('express')
@@ -15,25 +15,27 @@ const server = express()
 const Job = new GraphQLObjectType({
   name: 'Jobs',
   description: 'Jobs I have had or still have',
-  company: {
-    type: GraphQLString,
-    description: 'Name of the Company'
-  },
-  title: {
-    type: GraphQLString,
-    description: 'Title I had there'
-  },
-  location: {
-    type: GraphQLString,
-    description: 'Where this job was located'
-  },
-  started: {
-    type: GraphQLString,
-    description: 'Started Date'
-  },
-  finished: {
-    type: GraphQLString,
-    description: 'End date'
+  fields: {
+    company: {
+      type: GraphQLString,
+      description: 'Name of the Company'
+    },
+    title: {
+      type: GraphQLString,
+      description: 'Title I had there'
+    },
+    location: {
+      type: GraphQLString,
+      description: 'Where this job was located'
+    },
+    started: {
+      type: GraphQLString,
+      description: 'Started Date'
+    },
+    finished: {
+      type: GraphQLString,
+      description: 'End date'
+    }
   }
 })
 
@@ -65,8 +67,16 @@ const queryType = new GraphQLObjectType({
       type: GraphQLString,
       description: 'My github link',
       resolve: () => data.github
+    },
+    employed: {
+      type: GraphQLBoolean,
+      description: 'Am I employed',
+      resolve: () => true
+    },
+    jobs: {
+      type: new GraphQLList(Job),
+      resolve: () => data.jobs
     }
-    // jobs: [Job]
   }
 })
 
