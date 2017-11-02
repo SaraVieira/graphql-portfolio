@@ -1,0 +1,37 @@
+[
+  {
+    "company": "YLD",
+    "title": "Full-stack Developer",
+    "location": "Lisboa, Portugal",
+    "started": "Sep 2017",
+    "finished": ""
+  },
+  {
+    "company": "Mindera",
+    "title": "Front End Developer",
+    "location": "Porto",
+    "started": "Apr 2016",
+    "finished": "Sep 2017"
+  },
+  {
+    "company": "Porto Tech Center (Africa Internet Group)",
+    "title": "Front End Developer",
+    "location": "Porto, Portugal",
+    "started": "Feb 2015",
+    "finished": "Apr 2016"
+  },
+  {
+    "company": "Pixelmatters",
+    "title": "Front-End Developer",
+    "location": "Porto",
+    "started": "Aug 2014",
+    "finished": "Dec 2014"
+  },
+  {
+    "company": "Ideoma Design",
+    "title": "Developer / Wordpress",
+    "location": "",
+    "started": "Jan 2014",
+    "finished": "Jul 2014"
+  }
+]
