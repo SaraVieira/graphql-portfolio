@@ -1,7 +1,6 @@
 {
-  "name": "react-starter",
-  "version": "0.0.0",
-  "private": true,
+  "name": "GraphQL Portfolio",
+  "version": "1.0.0",
   "engines": {
     "node": ">=4"
   },
