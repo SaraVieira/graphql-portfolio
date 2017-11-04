@@ -3,7 +3,7 @@ import GraphiQL from 'graphiql'
 import fetch from 'isomorphic-fetch'
 import Logo from '../../assets/logo.svg'
 
-import 'graphiql/graphiql.css'
+import '../../styles/editor.css'
 import 'normalize.css/normalize.css'
 
 const graphQLFetcher = graphQLParams =>
@@ -14,12 +14,22 @@ const graphQLFetcher = graphQLParams =>
   }).then(response => response.json())
 
 const defaultQuery = `
-  Put YA shit here
+  # Test 
+
+  {
+    name
+  }
 `
 
 const Home = () => (
-  <GraphiQL defaultQuery={defaultQuery} fetcher={graphQLFetcher}>
-    <GraphiQL.Logo><Logo /></GraphiQL.Logo>
+  <GraphiQL
+    defaultQuery={defaultQuery}
+    fetcher={graphQLFetcher}
+    editorTheme='material'
+  >
+    <GraphiQL.Logo>
+      <img src={Logo} height='30px' alt='Logo' />
+    </GraphiQL.Logo>
   </GraphiQL>
 )
 

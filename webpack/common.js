@@ -12,9 +12,7 @@ export const babelLoaderOptions = {
 }
 
 export const cssLoaderOptions = {
-  minimize: isProduction,
-  importLoaders: 1,
-  localIdentName: '[name]__[local]___[hash:base64:5]'
+  minimize: isProduction
 }
 
 export const urlLoaderOptions = {

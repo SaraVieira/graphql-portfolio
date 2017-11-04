@@ -5495,6 +5495,13 @@ style-jsx@^0.0.0:
   version "0.0.0"
   resolved "https://registry.yarnpkg.com/style-jsx/-/style-jsx-0.0.0.tgz#a8ad27acd0e48c96bb2da5186f64045430ebe363"
 
+style-loader@^0.19.0:
+  version "0.19.0"
+  resolved "https://registry.yarnpkg.com/style-loader/-/style-loader-0.19.0.tgz#7258e788f0fee6a42d710eaf7d6c2412a4c50759"
+  dependencies:
+    loader-utils "^1.0.2"
+    schema-utils "^0.3.0"
+
 "styled-jsx-postcss@git+https://github.com/timsuchanek/styled-jsx-postcss#build3":
   version "0.2.0"
   resolved "git+https://github.com/timsuchanek/styled-jsx-postcss#677ee0fb7f9138047a00e03c8c3e44adbb33cf2a"

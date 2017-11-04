@@ -12,6 +12,8 @@ function render (req, res) {
         <head>
           <meta charset="utf-8" />
           <meta content="width=device-width, initial-scale=1" name="viewport" />
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.23.0/theme/material.css" />
+          <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono" rel="stylesheet">
           <title>Sara Vieira</title>
           <style>
             body,

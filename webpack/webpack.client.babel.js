@@ -27,24 +27,26 @@ export default {
     rules: [
       {
         test: /\.css$/,
-        use: ExtractTextPlugin.extract({
-          use: [
-            {
-              loader: 'css-loader',
-              options: cssLoaderOptions
-            },
-            {
-              loader: 'postcss-loader',
-              options: {
-                plugins () {
-                  return [
-                    require('postcss-cssnext') // eslint-disable-line global-require
-                  ]
-                }
+        use: [
+          {
+            loader: 'style-loader',
+            options: cssLoaderOptions
+          },
+          {
+            loader: 'css-loader',
+            options: cssLoaderOptions
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              plugins () {
+                return [
+                  require('postcss-cssnext') // eslint-disable-line global-require
+                ]
               }
             }
-          ]
-        })
+          }
+        ]
       },
       {
         test: /\.flow$/,
@@ -75,11 +77,7 @@ export default {
         ]
       },
       {
-        test: /\.svg$/,
-        loader: 'svg-inline-loader'
-      },
-      {
-        include: /\.(png|jpeg|jpg)$/,
+        include: /\.(png|jpeg|jpg|svg)$/,
         use: [
           {
             loader: 'url-loader',
@@ -99,10 +97,6 @@ export default {
         })
       ]
       : [new webpack.HotModuleReplacementPlugin()]),
-    new ExtractTextPlugin({
-      allChunks: true,
-      filename: `css/style${isProduction ? '.[contenthash:8]' : ''}.css`
-    }),
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
       minChunks: ({ resource }) => /node_modules/.test(resource)

@@ -56,15 +56,11 @@ export default {
         ]
       },
       {
-        test: /\.svg$/,
-        loader: 'svg-inline-loader'
-      },
-      {
         test: /\.flow$/,
         use: 'null-loader'
       },
       {
-        include: /\.(png|jpeg|jpg)$/,
+        include: /\.(png|jpeg|jpg|svg)$/,
         use: [
           {
             loader: 'url-loader',
