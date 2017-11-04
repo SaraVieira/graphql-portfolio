@@ -1,5 +1,4 @@
 import AssetsPlugin from 'assets-webpack-plugin'
-import ExtractTextPlugin from 'extract-text-webpack-plugin'
 import WebpackMd5Hash from 'webpack-md5-hash'
 import webpack from 'webpack'
 
