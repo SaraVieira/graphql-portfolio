@@ -1,6 +1,7 @@
 const distanceInWordsToNow = require('date-fns/distance_in_words_to_now')
 const jobs = require('./resume.json')
 const repos = require('./github')
+const talks = require('./talks')
 
 module.exports = {
   name: 'Sara Vieira',
@@ -9,5 +10,6 @@ module.exports = {
   twitter: 'https://twitter.com/NikkitaFTW',
   github: 'https://github.com/SaraVieira/',
   jobs,
-  repos
+  repos,
+  talks
 }

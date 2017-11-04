@@ -28,7 +28,10 @@ function render (req, res) {
           <link href="${CSS_BUNDLE}" rel="stylesheet">
         </head>
         <body>
-          <div id="root"></div>
+          <div id="root">
+            Sara Vieira
+            Front End Developer
+          </div>
           <script src="${VENDOR_BUNDLE}"></script>
           <script src="${CLIENT_BUNDLE}"></script>
         </body>
