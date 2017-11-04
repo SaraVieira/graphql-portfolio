@@ -2,6 +2,7 @@ import React from 'react'
 import { BrowserRouter as Router } from 'react-router-dom'
 import { render } from 'react-dom'
 import App from '../app/components/App'
+import * as OfflinePluginRuntime from 'offline-plugin/runtime'
 import './style.css'
 
 render(
@@ -14,3 +15,4 @@ render(
 if (module.hot) {
   module.hot.accept()
 }
+OfflinePluginRuntime.install()

@@ -39,6 +39,11 @@ const queryType = new GraphQLObjectType({
       description: 'My Age',
       resolve: () => data.age
     },
+    email: {
+      type: GraphQLString,
+      description: 'My Email',
+      resolve: () => data.email
+    },
     company: {
       type: GraphQLString,
       description: 'The company I work for as of now',

@@ -1,7 +1,7 @@
 import AssetsPlugin from 'assets-webpack-plugin'
 import WebpackMd5Hash from 'webpack-md5-hash'
 import webpack from 'webpack'
-
+import OfflinePlugin from 'offline-plugin'
 import common, {
   babelLoaderOptions,
   cssLoaderOptions,
@@ -100,7 +100,8 @@ export default {
       name: 'vendor',
       minChunks: ({ resource }) => /node_modules/.test(resource)
     }),
-    new WebpackMd5Hash()
+    new WebpackMd5Hash(),
+    new OfflinePlugin()
   ],
   bail: isProduction
 }

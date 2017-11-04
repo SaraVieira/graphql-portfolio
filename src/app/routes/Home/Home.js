@@ -23,6 +23,7 @@ const defaultQuery = `
   {
     name,
     age,
+    email,
     github,
     twitter,
     employed,
