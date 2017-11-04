@@ -12,6 +12,7 @@ import {
 
 import data from './data/main'
 import Job from './types/Job'
+import Project from './types/Project'
 import Repo from './types/Repo'
 import Talk from './types/Talk'
 import express from 'express'
@@ -19,7 +20,6 @@ import graphqlHTTP from 'express-graphql'
 import morgan from 'morgan'
 
 import renderMiddleware from './middleware/render'
-import { GraphQLError } from 'graphql/error/GraphQLError'
 
 const isProduction = process.env.NODE_ENV === 'production'
 const port = process.env.PORT || 3000
@@ -70,6 +70,10 @@ const queryType = new GraphQLObjectType({
     talks: {
       type: new GraphQLList(Talk),
       resolve: () => data.talks
+    },
+    projects: {
+      type: new GraphQLList(Project),
+      resolve: () => data.projects
     }
   }
 })

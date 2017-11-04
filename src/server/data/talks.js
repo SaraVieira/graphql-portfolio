@@ -23,48 +23,37 @@ const talks = [
     name: 'CSS Hates You',
     event: 'Formidable & Friends Birthday Bash!',
     date: new Date(2017, 11, 9),
-    done: !!isPast(new Date(2017, 11, 9)),
-    video: '',
-    slides: ''
+    done: !!isPast(new Date(2017, 11, 9))
   },
   {
     name: 'We need to talk about Preact',
     event: 'JS Roundabout',
     date: new Date(2017, 11, 8),
-    done: !!isPast(new Date(2017, 11, 8)),
-    video: '',
-    slides: ''
+    done: !!isPast(new Date(2017, 11, 8))
   },
   {
     name: 'We need to talk about Preact',
     event: 'React Day Berlin',
     date: new Date(2017, 12, 2),
-    done: !!isPast(new Date(2017, 12, 2)),
-    video: '',
-    slides: ''
+    done: !!isPast(new Date(2017, 12, 2))
   },
   {
     name: "Your brain doesn't have a --fix flag",
     event: 'Agent Conf',
     date: new Date(2018, 1, 25),
-    done: !!isPast(new Date(2018, 1, 25)),
-    video: '',
-    slides: ''
+    done: !!isPast(new Date(2018, 1, 25))
   },
   {
     name: 'Testing React Applications',
     event: 'React Finland',
     date: new Date(2018, 4, 25),
-    done: !!isPast(new Date(2018, 4, 25)),
-    video: '',
-    slides: ''
+    done: !!isPast(new Date(2018, 4, 25))
   },
   {
     name: 'Styleguide Driven Development',
     event: 'React Girls London',
     date: new Date(2017, 9, 26),
     done: !!isPast(new Date(2017, 9, 26)),
-    video: '',
     slides: 'https://github.com/SaraVieira/styleguide-driven-development'
   },
   {
@@ -72,7 +61,6 @@ const talks = [
     event: 'React Alicante',
     date: new Date(2017, 10, 30),
     done: !!isPast(new Date(2017, 10, 30)),
-    video: '',
     slides: 'https://github.com/SaraVieira/styleguide-driven-development'
   },
   {
@@ -107,8 +95,7 @@ const talks = [
     event: 'QCon London 2015',
     date: new Date(2015, 6, 20),
     done: !!isPast(new Date(2015, 6, 20)),
-    video: 'https://www.infoq.com/presentations/front-end-tools-workflows',
-    slides: ''
+    video: 'https://www.infoq.com/presentations/front-end-tools-workflows'
   }
 ]
 
