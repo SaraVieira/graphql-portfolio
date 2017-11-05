@@ -28,8 +28,7 @@ export default {
         test: /\.css$/,
         use: [
           {
-            loader: 'style-loader',
-            options: cssLoaderOptions
+            loader: 'style-loader'
           },
           {
             loader: 'css-loader',
@@ -40,7 +39,11 @@ export default {
             options: {
               plugins () {
                 return [
-                  require('postcss-cssnext') // eslint-disable-line global-require
+                  require('postcss-import')({
+                    path: ['src/app/styles']
+                  }),
+                  require('postcss-cssnext')({ apply: false }), // eslint-disable-line global-require
+                  require('postcss-apply')
                 ]
               }
             }

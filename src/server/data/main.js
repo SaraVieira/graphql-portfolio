@@ -8,7 +8,7 @@ module.exports = {
   name: 'Sara Vieira',
   company: 'YLD',
   email: 'hey@iamsaravieira.com',
-  age: distanceInWordsToNow(new Date(1991, 12, 29)),
+  age: distanceInWordsToNow(new Date(1991, 11, 29)),
   twitter: 'https://twitter.com/NikkitaFTW',
   github: 'https://github.com/SaraVieira/',
   instagram: 'https://www.instagram.com/niikkitaftw/',

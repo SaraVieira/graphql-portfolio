@@ -3,8 +3,8 @@ import GraphiQL from 'graphiql'
 import fetch from 'isomorphic-fetch'
 import Logo from '../../assets/logo.svg'
 
+import '../../styles/main.css'
 import '../../styles/editor.css'
-import 'normalize.css/normalize.css'
 
 const graphQLFetcher = graphQLParams =>
   fetch('/graphql', {
@@ -36,7 +36,7 @@ const defaultQuery = `
 
 const Home = () => (
   <GraphiQL
-    defaultQuery={defaultQuery}
+    query={defaultQuery}
     fetcher={graphQLFetcher}
     editorTheme='material'
   >

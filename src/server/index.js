@@ -9,7 +9,7 @@ import {
   GraphQLString,
   GraphQLList
 } from 'graphql'
-
+import format from 'date-fns/format'
 import data from './data/main'
 import Job from './types/Job'
 import Project from './types/Project'
@@ -74,7 +74,7 @@ const queryType = new GraphQLObjectType({
     },
     talks: {
       type: new GraphQLList(Talk),
-      resolve: () => data.talks
+      resolve: () => data.talks.map(talk => { talk.date = format(talk.date, 'DD/MM/YY'); return talk })
     },
     projects: {
       type: new GraphQLList(Project),

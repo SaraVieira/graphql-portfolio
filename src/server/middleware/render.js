@@ -1,4 +1,4 @@
-/* global CSS_BUNDLE: true, VENDOR_BUNDLE: true, CLIENT_BUNDLE: true */
+/* global VENDOR_BUNDLE: true, CLIENT_BUNDLE: true */
 function render (req, res) {
   const context = {}
 
@@ -28,14 +28,6 @@ function render (req, res) {
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.23.0/theme/material.css" />
           <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono" rel="stylesheet">
           <title>Sara Vieira</title>
-          <style>
-            body,
-            html,
-            #root {
-              height: 100%;
-            }
-          </style>
-          <link href="${CSS_BUNDLE}" rel="stylesheet">
         </head>
         <body>
           <div id="root">

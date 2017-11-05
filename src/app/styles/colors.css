@@ -1,0 +1,46 @@
+.cm-ws,
+.cm-punctuation {
+    color: var(--grey);
+}
+
+.CodeMirror-info .type-name {
+  color: #F9A825;
+}
+
+.CodeMirror-info .field-name {
+  color: #3F51B5;
+}
+
+.CodeMirror-info .enum-value {
+  color: #0B7FC7;
+}
+
+.CodeMirror-info .arg-name {
+  color: #8B2BB9;
+}
+
+.CodeMirror-info .directive-name {
+  color: #B33086;
+}
+.graphiql-container .keyword {
+  color: #B11A04;
+}
+
+.graphiql-container .type-name {
+  color: #CA9800;
+}
+
+.graphiql-container .field-name {
+  color: #1F61A0;
+}
+.graphiql-container .enum-value {
+  color: #0B7FC7;
+}
+
+.graphiql-container .arg-name {
+  color: #8B2BB9;
+}
+
+.graphiql-container .arg-default-value {
+  color: #43A047;
+}

@@ -26,10 +26,15 @@ export default {
     rules: [
       {
         test: /\.css$/,
-        use: {
-          loader: 'css-loader/locals',
-          options: cssLoaderOptions
-        }
+        use: [
+          {
+            loader: 'style-loader'
+          },
+          {
+            loader: 'css-loader',
+            options: cssLoaderOptions
+          }
+        ]
       },
       {
         test: /\.js$/,
@@ -76,11 +81,6 @@ export default {
   plugins: [
     ...common.plugins,
     new webpack.DefinePlugin({
-      CSS_BUNDLE: JSON.stringify(
-        isProduction
-          ? require('../build/assets.json').client.css
-          : '/css/style.css'
-      ),
       CLIENT_BUNDLE: JSON.stringify(
         isProduction
           ? require('../build/assets.json').client.js
