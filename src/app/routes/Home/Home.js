@@ -4,7 +4,7 @@ import fetch from 'isomorphic-fetch'
 import Logo from '../../assets/logo.svg'
 
 import '../../styles/main.css'
-import '../../styles/editor.css'
+import 'graphiql-material-theme'
 
 const graphQLFetcher = graphQLParams =>
   fetch('/graphql', {

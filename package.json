@@ -45,6 +45,7 @@
     "express-graphql": "^0.6.11",
     "file-loader": "1.1.5",
     "graphiql": "^0.11.10",
+    "graphiql-material-theme": "^1.0.0",
     "graphql": "^0.11.7",
     "graphql-playground": "^1.1.0",
     "isomorphic-fetch": "^2.2.1",

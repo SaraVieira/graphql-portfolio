@@ -25,8 +25,6 @@ function render (req, res) {
           <meta property="og:description" content="Front-End Developer From Portugal" />
           <link rel="me" href="https://twitter.com/NikkitaFTW" type="text/html">
           <link rel="me" href="mailto:hey@iamsaravieira.com">
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.23.0/theme/material.css" />
-          <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono" rel="stylesheet">
           <title>Sara Vieira</title>
         </head>
         <body>
