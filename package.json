@@ -47,7 +47,6 @@
     "graphiql": "^0.11.10",
     "graphiql-material-theme": "^1.0.0",
     "graphql": "^0.11.7",
-    "graphql-playground": "^1.1.0",
     "isomorphic-fetch": "^2.2.1",
     "morgan": "1.9.0",
     "normalize.css": "^7.0.0",
