@@ -1,26 +1,26 @@
 /* eslint-disable import/no-unresolved, global-require */
-import nodeExternals from 'webpack-node-externals'
-import webpack from 'webpack'
+import nodeExternals from "webpack-node-externals";
+import webpack from "webpack";
 
 import common, {
   babelLoaderOptions,
   cssLoaderOptions,
   urlLoaderOptions
-} from './common'
+} from "./common";
 
-const isProduction = process.env.NODE_ENV === 'production'
+const isProduction = process.env.NODE_ENV === "production";
 
 export default {
-  name: 'server',
-  entry: './src/server',
-  target: 'node',
+  name: "server",
+  entry: "./src/server",
+  target: "node",
   node: {
     __dirname: false
   },
   output: {
     ...common.output,
-    filename: 'server.js',
-    libraryTarget: 'commonjs2'
+    filename: "server.js",
+    libraryTarget: "commonjs2"
   },
   module: {
     rules: [
@@ -28,10 +28,10 @@ export default {
         test: /\.css$/,
         use: [
           {
-            loader: 'style-loader'
+            loader: "style-loader"
           },
           {
-            loader: 'css-loader',
+            loader: "css-loader",
             options: cssLoaderOptions
           }
         ]
@@ -41,12 +41,12 @@ export default {
         exclude: /node_modules/,
         use: [
           {
-            loader: 'babel-loader',
+            loader: "babel-loader",
             options: {
               ...babelLoaderOptions,
               presets: [
                 [
-                  'env',
+                  "env",
                   {
                     targets: {
                       node: true
@@ -54,7 +54,7 @@ export default {
                     modules: false
                   }
                 ],
-                'react'
+                "react"
               ]
             }
           }
@@ -62,13 +62,13 @@ export default {
       },
       {
         test: /\.flow$/,
-        use: 'null-loader'
+        use: "null-loader"
       },
       {
         include: /\.(png|jpeg|jpg|svg)$/,
         use: [
           {
-            loader: 'url-loader',
+            loader: "url-loader",
             options: {
               ...urlLoaderOptions,
               emitFile: false
@@ -83,19 +83,19 @@ export default {
     new webpack.DefinePlugin({
       CLIENT_BUNDLE: JSON.stringify(
         isProduction
-          ? require('../build/assets.json').client.js
-          : '/js/client.js'
+          ? require("../build/assets.json").client.js
+          : "/js/client.js"
       ),
       VENDOR_BUNDLE: JSON.stringify(
         isProduction
-          ? require('../build/assets.json').vendor.js
-          : '/js/vendor.js'
+          ? require("../build/assets.json").vendor.js
+          : "/js/vendor.js"
       ),
-      'process.env': {
+      "process.env": {
         PORT: JSON.stringify(process.env.PORT)
       }
     })
   ],
   externals: [nodeExternals()],
   bail: isProduction
-}
+};

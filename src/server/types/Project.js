@@ -1,25 +1,25 @@
-const { GraphQLObjectType, GraphQLString } = require('graphql')
+const { GraphQLObjectType, GraphQLString } = require("graphql");
 
 module.exports = new GraphQLObjectType({
-  name: 'Projects',
+  name: "Projects",
   description:
-    'Dumb and maybe not so dumb Projects/Packages I have done over the years',
+    "Dumb and maybe not so dumb Projects/Packages I have done over the years",
   fields: {
     name: {
       type: GraphQLString,
-      description: 'Name'
+      description: "Name"
     },
     description: {
       type: GraphQLString,
-      description: 'Description'
+      description: "Description"
     },
     github: {
       type: GraphQLString,
-      description: 'The repo of this'
+      description: "The repo of this"
     },
     website: {
       type: GraphQLString,
-      description: 'The website of this if there is one'
+      description: "The website of this if there is one"
     }
   }
-})
+});

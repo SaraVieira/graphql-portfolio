@@ -1,29 +1,23 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom'
+import React from "react";
+import { NavLink } from "react-router-dom";
 
-function Navigation () {
+function Navigation() {
   return (
     <nav>
-      <ul >
+      <ul>
         <li>
-          <NavLink
-            to='/'
-            exact
-          >
+          <NavLink to="/" exact>
             Home
           </NavLink>
         </li>
         <li>
-          <NavLink
-            to='/about'
-            exact
-          >
+          <NavLink to="/about" exact>
             About
           </NavLink>
         </li>
       </ul>
     </nav>
-  )
+  );
 }
 
-export default Navigation
+export default Navigation;

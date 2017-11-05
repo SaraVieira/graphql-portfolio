@@ -3,39 +3,39 @@ const {
   GraphQLBoolean,
   GraphQLString,
   GraphQLInt
-} = require('graphql')
+} = require("graphql");
 
 module.exports = new GraphQLObjectType({
-  name: 'Repos',
-  description: 'All my github repos',
+  name: "Repos",
+  description: "All my github repos",
   fields: {
     name: {
       type: GraphQLString,
-      description: 'Repo Name'
+      description: "Repo Name"
     },
     url: {
       type: GraphQLString,
-      description: 'Link to repo'
+      description: "Link to repo"
     },
     description: {
       type: GraphQLString,
-      description: 'Repo description'
+      description: "Repo description"
     },
     language: {
       type: GraphQLString,
-      description: 'Language used'
+      description: "Language used"
     },
     stars: {
       type: GraphQLInt,
-      description: 'Number of stars'
+      description: "Number of stars"
     },
     fork: {
       type: GraphQLBoolean,
-      description: 'Is it forked ?'
+      description: "Is it forked ?"
     },
     owner: {
       type: GraphQLString,
-      description: 'Owner of the repo'
+      description: "Owner of the repo"
     }
   }
-})
+});

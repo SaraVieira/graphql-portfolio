@@ -1,6 +1,8 @@
-const axios = require('axios')
+const axios = require("axios");
 
-module.exports = axios('https://api.github.com/users/SaraVieira/repos?type=all&per_page=100')
+module.exports = axios(
+  "https://api.github.com/users/SaraVieira/repos?type=all&per_page=100"
+)
   .then(repos =>
     repos.data.map(repo => ({
       name: repo.name,
@@ -13,4 +15,4 @@ module.exports = axios('https://api.github.com/users/SaraVieira/repos?type=all&p
     }))
   )
   .then(repos => repos.filter(r => !r.fork))
-  .then(repos => repos.sort((a, b) => b.stars - a.stars))
+  .then(repos => repos.sort((a, b) => b.stars - a.stars));

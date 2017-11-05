@@ -1,31 +1,31 @@
-const { GraphQLObjectType, GraphQLString, GraphQLBoolean } = require('graphql')
+const { GraphQLObjectType, GraphQLString, GraphQLBoolean } = require("graphql");
 
 module.exports = new GraphQLObjectType({
-  name: 'Talk',
+  name: "Talk",
   fields: {
     name: {
       type: GraphQLString,
-      description: 'Talk Name'
+      description: "Talk Name"
     },
     event: {
       type: GraphQLString,
-      description: 'The awesome event that hosted this talk'
+      description: "The awesome event that hosted this talk"
     },
     date: {
       type: GraphQLString,
-      description: 'The Date'
+      description: "The Date"
     },
     video: {
       type: GraphQLString,
-      description: 'Video link if there is one'
+      description: "Video link if there is one"
     },
     slides: {
       type: GraphQLString,
-      description: 'Slide link if there is one'
+      description: "Slide link if there is one"
     },
     done: {
       type: GraphQLBoolean,
-      description: 'Have I already done this talk ?'
+      description: "Have I already done this talk ?"
     }
   }
-})
+});

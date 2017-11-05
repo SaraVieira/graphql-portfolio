@@ -1,17 +1,17 @@
-import React from 'react'
-import GraphiQL from 'graphiql'
-import fetch from 'isomorphic-fetch'
-import Logo from '../../assets/logo.svg'
+import React from "react";
+import GraphiQL from "graphiql";
+import fetch from "isomorphic-fetch";
+import Logo from "../../assets/logo.svg";
 
-import '../../styles/main.css'
-import 'graphiql-material-theme'
+import "../../styles/main.css";
+import "graphiql-material-theme";
 
 const graphQLFetcher = graphQLParams =>
-  fetch('/graphql', {
-    method: 'post',
-    headers: { 'Content-Type': 'application/json' },
+  fetch("/graphql", {
+    method: "post",
+    headers: { "Content-Type": "application/json" },
     body: JSON.stringify(graphQLParams)
-  }).then(response => response.json())
+  }).then(response => response.json());
 
 const defaultQuery = `
   # Yellow
@@ -32,18 +32,18 @@ const defaultQuery = `
     jobs,
     repos
   }
-`
+`;
 
 const Home = () => (
   <GraphiQL
     query={defaultQuery}
     fetcher={graphQLFetcher}
-    editorTheme='material'
+    editorTheme="material"
   >
     <GraphiQL.Logo>
-      <img src={Logo} height='30px' alt='Logo' />
+      <img src={Logo} height="30px" alt="Logo" />
     </GraphiQL.Logo>
   </GraphiQL>
-)
+);
 
-export default Home
+export default Home;
