@@ -1,0 +1,7 @@
+{
+  "extends": [
+    "prettier-standard/lib/base",
+    "standard-react",
+    "prettier"
+  ]
+}

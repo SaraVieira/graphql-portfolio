@@ -1,26 +1,26 @@
-import AssetsPlugin from "assets-webpack-plugin";
-import WebpackMd5Hash from "webpack-md5-hash";
-import webpack from "webpack";
-import OfflinePlugin from "offline-plugin";
+import AssetsPlugin from 'assets-webpack-plugin'
+import WebpackMd5Hash from 'webpack-md5-hash'
+import webpack from 'webpack'
+import OfflinePlugin from 'offline-plugin'
 import common, {
   babelLoaderOptions,
   cssLoaderOptions,
   urlLoaderOptions
-} from "./common";
+} from './common'
 
-const isProduction = process.env.NODE_ENV === "production";
+const isProduction = process.env.NODE_ENV === 'production'
 
 export default {
-  name: "client",
+  name: 'client',
   entry: {
     client: [
-      ...(!isProduction && ["webpack-hot-middleware/client"]),
-      "./src/client"
+      ...(!isProduction && ['webpack-hot-middleware/client']),
+      './src/client'
     ]
   },
   output: {
     ...common.output,
-    filename: `js/[name]${isProduction ? ".[chunkhash:8]" : ""}.js`
+    filename: `js/[name]${isProduction ? '.[chunkhash:8]' : ''}.js`
   },
   module: {
     rules: [
@@ -28,23 +28,23 @@ export default {
         test: /\.css$/,
         use: [
           {
-            loader: "style-loader"
+            loader: 'style-loader'
           },
           {
-            loader: "css-loader",
+            loader: 'css-loader',
             options: cssLoaderOptions
           },
           {
-            loader: "postcss-loader",
+            loader: 'postcss-loader',
             options: {
               plugins() {
                 return [
-                  require("postcss-import")({
-                    path: ["src/app/styles"]
+                  require('postcss-import')({
+                    path: ['src/app/styles']
                   }),
-                  require("postcss-cssnext")({ apply: false }), // eslint-disable-line global-require
-                  require("postcss-apply")
-                ];
+                  require('postcss-cssnext')({ apply: false }), // eslint-disable-line global-require
+                  require('postcss-apply')
+                ]
               }
             }
           }
@@ -52,27 +52,27 @@ export default {
       },
       {
         test: /\.flow$/,
-        use: "null-loader"
+        use: 'null-loader'
       },
       {
         test: /\.js$/,
         exclude: /node_modules/,
         use: [
           {
-            loader: "babel-loader",
+            loader: 'babel-loader',
             options: {
               ...babelLoaderOptions,
               presets: [
                 [
-                  "env",
+                  'env',
                   {
                     targets: {
-                      browsers: "> 1%, Last 2 versions"
+                      browsers: '> 1%, Last 2 versions'
                     },
                     modules: false
                   }
                 ],
-                "react"
+                'react'
               ]
             }
           }
@@ -82,7 +82,7 @@ export default {
         include: /\.(png|jpeg|jpg|svg)$/,
         use: [
           {
-            loader: "url-loader",
+            loader: 'url-loader',
             options: urlLoaderOptions
           }
         ]
@@ -94,17 +94,17 @@ export default {
     ...(isProduction
       ? [
           new AssetsPlugin({
-            filename: "assets.json",
+            filename: 'assets.json',
             path: common.output.path
           })
         ]
       : [new webpack.HotModuleReplacementPlugin()]),
     new webpack.optimize.CommonsChunkPlugin({
-      name: "vendor",
+      name: 'vendor',
       minChunks: ({ resource }) => /node_modules/.test(resource)
     }),
     new WebpackMd5Hash(),
     new OfflinePlugin()
   ],
   bail: isProduction
-};
+}

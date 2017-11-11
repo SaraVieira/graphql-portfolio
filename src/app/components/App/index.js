@@ -1,3 +1,2 @@
-import App from "./App";
-
-export default App;
+import '../../styles/main.css'
+export { default } from './App'

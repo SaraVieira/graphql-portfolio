@@ -1,0 +1,13 @@
+# Jobs I have had or still have
+type Job {
+  # Name of the Company
+  company: String
+  # Title I had there
+  title: String!
+  # Where this job was located
+  location: String
+  # Started Date
+  started: String
+  # End date
+  finished: String
+}

@@ -1,0 +1,17 @@
+# All my github repos
+type Repo {
+  # Repo Name
+  name: String
+  # Link to repo
+  url: String
+  # Repo description
+  description: String
+  # Language used
+  language: String!
+  # Number of stars
+  stars: Int
+  # Is it forked?
+  fork: Boolean!
+  # Owner of the repo
+  owner: String
+}

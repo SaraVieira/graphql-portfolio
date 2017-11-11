@@ -1,9 +1,9 @@
 /* global VENDOR_BUNDLE: true, CLIENT_BUNDLE: true */
 function render(req, res) {
-  const context = {};
+  const context = {}
 
   if (context.url) {
-    return res.redirect(302, context.url);
+    return res.redirect(302, context.url)
   }
 
   return res.status(context.status || 200).send(`
@@ -53,7 +53,7 @@ function render(req, res) {
         </script>
         </body>
       </html>
-    `);
+    `)
 }
 
-export default render;
+export default render

@@ -1,118 +1,69 @@
 /* eslint-disable global-require, no-console */
-import path from "path";
+import path from 'path'
+import compression from 'compression'
+import express from 'express'
+import format from 'date-fns/format'
+import graphqlHTTP from 'express-graphql'
+import morgan from 'morgan'
+import { makeExecutableSchema } from 'graphql-tools'
 
-import compression from "compression";
-import {
-  GraphQLSchema,
-  GraphQLObjectType,
-  GraphQLBoolean,
-  GraphQLString,
-  GraphQLList
-} from "graphql";
-import format from "date-fns/format";
-import data from "./data/main";
-import Job from "./types/Job";
-import Project from "./types/Project";
-import Repo from "./types/Repo";
-import Talk from "./types/Talk";
-import express from "express";
-import graphqlHTTP from "express-graphql";
-import morgan from "morgan";
+import data from './data/main'
+import renderMiddleware from './middleware/render'
 
-import renderMiddleware from "./middleware/render";
+// Schemas
+import { Job, Repo, Talk, Query, Contributor, Project } from './types'
 
-const isProduction = process.env.NODE_ENV === "production";
-const port = process.env.PORT || 3000;
-const app = express();
+const isProduction = process.env.NODE_ENV === 'production'
+const port = process.env.PORT || 3000
+const app = express()
 
-const queryType = new GraphQLObjectType({
-  name: "Life",
-  description: "Fun right ?",
-  fields: {
-    name: {
-      type: GraphQLString,
-      description: "My Name",
-      resolve: () => data.name
-    },
-    age: {
-      type: GraphQLString,
-      description: "My Age",
-      resolve: () => data.age
-    },
-    email: {
-      type: GraphQLString,
-      description: "My Email",
-      resolve: () => data.email
-    },
-    company: {
-      type: GraphQLString,
-      description: "The company I work for as of now",
-      resolve: () => data.company
-    },
-    twitter: {
-      type: GraphQLString,
-      description: "My twitter link",
-      resolve: () => data.twitter
-    },
-    github: {
-      type: GraphQLString,
-      description: "My github link",
-      resolve: () => data.github
-    },
-    employed: {
-      type: GraphQLBoolean,
-      description: "Am I employed",
-      resolve: () => true
-    },
-    jobs: {
-      type: new GraphQLList(Job),
-      resolve: () => data.jobs
-    },
-    repos: {
-      type: new GraphQLList(Repo),
-      resolve: () => data.repos
-    },
-    talks: {
-      type: new GraphQLList(Talk),
-      resolve: () =>
-        data.talks.map(talk => {
-          talk.date = format(talk.date, "DD/MM/YY");
-          return talk;
-        })
-    },
-    projects: {
-      type: new GraphQLList(Project),
-      resolve: () => data.projects
-    }
+const typeDefs = Query.concat(Job, Project, Repo, Talk, Contributor)
+
+const resolvers = {
+  Query: {
+    name: () => data.name,
+    age: () => data.age,
+    email: () => data.email,
+    company: () => data.company,
+    twitter: () => data.twitter,
+    github: () => data.github,
+    employed: () => true,
+    jobs: () => data.jobs,
+    repos: () => data.repos,
+    contributors: () => data.contributors,
+    talks: () =>
+      data.talks.map(talk => ({
+        ...talk,
+        date: format(talk.date, 'DD/MM/YY')
+      })),
+    projects: () => data.projects
   }
-});
+}
 
-const schema = new GraphQLSchema({
-  query: queryType
-});
+const schema = makeExecutableSchema({ typeDefs, resolvers })
 
 if (isProduction) {
-  app.use(compression());
+  app.use(compression())
 } else {
   const {
     webpackDevMiddleware,
     webpackHotMiddleware
-  } = require("./middleware/webpack");
+  } = require('./middleware/webpack')
 
-  app.use(webpackDevMiddleware);
-  app.use(webpackHotMiddleware);
+  app.use(webpackDevMiddleware)
+  app.use(webpackHotMiddleware)
 }
 
 app.use(
-  "/graphql",
+  '/graphql',
   graphqlHTTP({
     schema,
     graphiql: false
   })
-);
+)
 
-app.use(morgan(isProduction ? "combined" : "dev"));
-app.use(express.static(path.resolve(__dirname, "../build")));
-app.use(renderMiddleware);
+app.use(morgan(isProduction ? 'combined' : 'dev'))
+app.use(express.static(path.resolve(__dirname, '../build')))
+app.use(renderMiddleware)
 
-app.listen(port, console.log(`Server running on port ${port}`));
+app.listen(port, console.log(`Server running on port ${port}`))

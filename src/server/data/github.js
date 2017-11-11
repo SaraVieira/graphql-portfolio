@@ -1,7 +1,7 @@
-const axios = require("axios");
+const axios = require('axios')
 
-module.exports = axios(
-  "https://api.github.com/users/SaraVieira/repos?type=all&per_page=100"
+export const repos = axios(
+  'https://api.github.com/users/SaraVieira/repos?type=all&per_page=100'
 )
   .then(repos =>
     repos.data.map(repo => ({
@@ -15,4 +15,13 @@ module.exports = axios(
     }))
   )
   .then(repos => repos.filter(r => !r.fork))
-  .then(repos => repos.sort((a, b) => b.stars - a.stars));
+  .then(repos => repos.sort((a, b) => b.stars - a.stars))
+
+export const contributors = axios(
+  'https://api.github.com/repos/SaraVieira/graphql-portfolio/contributors'
+).then(contributors =>
+  contributors.data.map(contributor => ({
+    name: contributor.login,
+    url: contributor.html_url
+  }))
+)

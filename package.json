@@ -10,6 +10,7 @@
     "now-build": "NODE_ENV=production npm run build:client -- -p && NODE_ENV=production npm run build:server -- -p",
     "build:client": "webpack --progress --config webpack/webpack.client.babel.js",
     "build:server": "webpack --progress --config webpack/webpack.server.babel.js",
+    "pretty": "prettier-standard {src,webpack}/**/*.js --single-quote",
     "dev": "npm run build:server && node build/server",
     "lint": "eslint --ignore-path .gitignore .",
     "prebuild": "rimraf build/*",
@@ -18,13 +19,14 @@
   },
   "lint-staged": {
     "*.js": [
-      "eslint --fix",
+      "npm run pretty",
       "git add"
     ]
   },
   "devDependencies": {
     "eslint": "^4.10.0",
     "eslint-config-prettier": "^2.7.0",
+    "eslint-config-prettier-standard": "^1.0.1",
     "eslint-config-standard": "^10.2.1",
     "eslint-config-standard-react": "^5.0.0",
     "eslint-plugin-import": "^2.8.0",
@@ -35,11 +37,14 @@
     "eslint-plugin-standard": "^3.0.1",
     "husky": "^0.14.3",
     "lint-staged": "^4.3.0",
+    "nodemon": "^1.12.1",
     "null-loader": "^0.1.1",
     "offline-plugin": "^4.8.4",
     "postcss-apply": "^0.8.0",
     "postcss-import": "^11.0.0",
-    "prettier": "^1.7.4"
+    "prettier": "^1.7.4",
+    "prettier-standard": "^7.0.3",
+    "raw-loader": "^0.5.1"
   },
   "dependencies": {
     "assets-webpack-plugin": "3.5.1",
@@ -60,6 +65,7 @@
     "graphiql": "^0.11.10",
     "graphiql-material-theme": "^1.0.3",
     "graphql": "^0.11.7",
+    "graphql-tools": "^2.7.2",
     "isomorphic-fetch": "^2.2.1",
     "morgan": "1.9.0",
     "normalize.css": "^7.0.0",

@@ -1,0 +1,7 @@
+# List of amazing people who helped this project
+type Contributor {
+  # Name of the Amazing Person that contributed
+  name: String
+  # Their Github URL
+  url: String
+}

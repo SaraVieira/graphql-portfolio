@@ -1,0 +1,14 @@
+type Talk {
+  # Talk name
+  name: String
+  # The awesome event that hosted this talk
+  event: String
+  # The Date
+  date: String
+  # Video link if there is one
+  video: String
+  # Slides link if there is one
+  slides: String
+  # Have I already done this talk?
+  done: Boolean
+}
