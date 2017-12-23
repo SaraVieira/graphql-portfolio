@@ -3,6 +3,7 @@ const jobs = require('./resume.json')
 const { repos, contributors } = require('./github')
 const talks = require('./talks')
 const projects = require('./projects')
+const countries = require('./countries')
 
 module.exports = {
   name: 'Sara Vieira',
@@ -17,5 +18,6 @@ module.exports = {
   repos,
   talks,
   projects,
-  contributors
+  contributors,
+  countries
 }

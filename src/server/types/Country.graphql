@@ -1,0 +1,5 @@
+# List of countries I have visted
+type Country {
+  # Name of the country
+  name: String
+}

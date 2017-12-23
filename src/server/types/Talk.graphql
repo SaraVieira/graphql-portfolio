@@ -10,5 +10,7 @@ type Talk {
   # Slides link if there is one
   slides: String
   # Have I already done this talk?
-  done: Boolean
+  done: Boolean,
+  # Where is this ?
+  location: String
 }
