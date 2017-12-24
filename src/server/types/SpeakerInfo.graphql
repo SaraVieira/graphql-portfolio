@@ -1,0 +1,23 @@
+# Speaker Info for talks (this part is mostly for me 😝)
+type SpeakerInfo {
+  # My Name
+  name: String!
+  # My Email
+  email: String!
+  # My Twitter handler
+  twitter: String!
+  # My GitHub name
+  github: String!
+  # Shirt size I want
+  shirtSize: String!
+  # Country flying from
+  country: String!,
+  # My Bio
+  bio: String!
+  # My Photo
+  photo: String!
+  # Talks
+  talks: [TalksPrepared]
+  # Recored Talks
+  videos: [String]
+}

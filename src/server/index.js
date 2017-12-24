@@ -11,13 +11,30 @@ import data from './data/main'
 import renderMiddleware from './middleware/render'
 
 // Schemas
-import { Job, Repo, Talk, Query, Contributor, Project, Country } from './types'
+import {
+  Job,
+  Repo,
+  Talk,
+  Query,
+  Contributor,
+  Project,
+  SpeakerInfo,
+  TalkPrepared
+} from './types'
 
 const isProduction = process.env.NODE_ENV === 'production'
 const port = process.env.PORT || 3000
 const app = express()
 
-const typeDefs = Query.concat(Job, Project, Repo, Talk, Contributor, Country)
+const typeDefs = Query.concat(
+  Job,
+  Project,
+  Repo,
+  Talk,
+  Contributor,
+  SpeakerInfo,
+  TalkPrepared
+)
 
 const resolvers = {
   Query: {
@@ -30,6 +47,7 @@ const resolvers = {
     employed: () => true,
     jobs: () => data.jobs,
     repos: () => data.repos,
+    randomCurseWord: () => data.randomCurseWord,
     contributors: () => data.contributors,
     countries: () => data.countries,
     talks: () =>
@@ -37,7 +55,8 @@ const resolvers = {
         ...talk,
         date: format(talk.date, 'DD/MM/YY')
       })),
-    projects: () => data.projects
+    projects: () => data.projects,
+    speakerInfo: () => data.speakerInfo
   }
 }
 

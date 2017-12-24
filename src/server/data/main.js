@@ -1,23 +1,23 @@
-const distanceInWordsToNow = require('date-fns/distance_in_words_to_now')
+const curseWords = require('curse-words-common')
+const uniqueRandomArray = require('unique-random-array')
 const jobs = require('./resume.json')
 const { repos, contributors } = require('./github')
 const talks = require('./talks')
 const projects = require('./projects')
 const countries = require('./countries')
+const speakerInfo = require('./speaker-info')
+const basic = require('./basic')
+
+const rand = uniqueRandomArray(curseWords)
 
 module.exports = {
-  name: 'Sara Vieira',
-  company: 'YLD',
-  email: 'hey@iamsaravieira.com',
-  age: distanceInWordsToNow(new Date(1991, 11, 29)),
-  twitter: 'https://twitter.com/NikkitaFTW',
-  github: 'https://github.com/SaraVieira/',
-  instagram: 'https://www.instagram.com/niikkitaftw/',
-  medium: 'https://medium.com/@nikkitaftw',
+  ...basic,
+  randomCurseWord: rand(),
   jobs,
   repos,
   talks,
   projects,
   contributors,
-  countries
+  countries,
+  speakerInfo
 }

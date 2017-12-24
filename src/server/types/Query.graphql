@@ -19,5 +19,8 @@ type Query {
   talks: [Talk]
   contributors: [Contributor]
   projects: [Project]
-  countries: [Country]
+  countries: [String],
+  speakerInfo: SpeakerInfo,
+  # Have fun
+  randomCurseWord: String
 }
