@@ -59,7 +59,6 @@ const talks = [
     video: 'https://www.youtube.com/watch?v=bYdeMvr5Aus',
     slides:
       'https://drive.google.com/open?id=1BJRGOBNySWpN7NRkr1kQVI1ul7EG9SCo5t4NSnFJrSM',
-    video: 'https://www.youtube.com/watch?v=Bb3Vyj0KTd4',
     location: 'Vienna, Autria'
   },
   {
