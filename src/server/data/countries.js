@@ -6,5 +6,6 @@ module.exports = [
   'Poland',
   'Austria',
   'United Kingdom',
-  'France'
+  'France',
+  'Switzerland'
 ]

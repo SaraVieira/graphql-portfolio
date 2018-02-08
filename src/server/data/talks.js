@@ -46,14 +46,29 @@ const talks = [
     date: new Date(2017, 11, 2),
     done: !!isPast(new Date(2017, 11, 2)),
     video: 'https://www.youtube.com/watch?v=jqXRSvXWYf8',
+    slides:
+      'https://drive.google.com/open?id=1BJRGOBNySWpN7NRkr1kQVI1ul7EG9SCo5t4NSnFJrSM',
+    video: 'https://www.youtube.com/watch?v=Bb3Vyj0KTd4',
     location: 'Berlin, Germany'
+  },
+  {
+    name: 'We need to talk about Preact',
+    event: 'React Vienna',
+    date: new Date(2017, 0, 18),
+    done: !!isPast(new Date(2017, 0, 18)),
+    video: 'https://www.youtube.com/watch?v=bYdeMvr5Aus',
+    slides:
+      'https://drive.google.com/open?id=1BJRGOBNySWpN7NRkr1kQVI1ul7EG9SCo5t4NSnFJrSM',
+    video: 'https://www.youtube.com/watch?v=Bb3Vyj0KTd4',
+    location: 'Vienna, Autria'
   },
   {
     name: "Your brain doesn't have a --fix flag",
     event: 'Agent Conf',
     date: new Date(2018, 0, 25),
     done: !!isPast(new Date(2018, 0, 25)),
-    location: 'Dornbirn, Austria'
+    location: 'Dornbirn, Austria',
+    slides: 'https://brain-fix.now.sh'
   },
   {
     name: 'Testing React Applications',
@@ -63,19 +78,26 @@ const talks = [
     location: 'Helsinki, Finland'
   },
   {
+    event: 'React Fest',
+    date: new Date(2018, 2, 9),
+    done: !!isPast(new Date(2018, 2, 9)),
+    location: 'London, UK'
+  },
+
+  {
     event: 'JSHeroes',
     date: new Date(2018, 3, 18),
     done: !!isPast(new Date(2018, 3, 18)),
     location: 'Cluj-Napoca, Romania'
   },
   {
-    event: 'Codefest',
-    date: new Date(2018, 2, 31),
-    done: !!isPast(new Date(2018, 2, 31)),
-    location: 'Novosibirsk, Russia'
+    event: 'Graphql Europe',
+    date: new Date(2018, 5, 15),
+    done: !!isPast(new Date(2018, 5, 15)),
+    location: 'Berlin, Germany'
   },
   {
-    event: 'Codefest',
+    event: 'Front End United',
     date: new Date(2018, 4, 31),
     done: !!isPast(new Date(2018, 4, 31)),
     location: 'Utrecht, Netherlands'

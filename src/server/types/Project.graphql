@@ -1,7 +1,7 @@
 # Dumb and maybe not so dumb Projects/Packages I have done over the years
 type Project {
   # Name
-  name: String
+  name: String!
   # Description
   description: String
   # The repo of this

@@ -7,7 +7,7 @@ type Repo {
   # Repo description
   description: String
   # Language used
-  language: String!
+  language: String
   # Number of stars
   stars: Int
   # Is it forked?
