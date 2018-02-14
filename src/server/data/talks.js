@@ -92,7 +92,7 @@ const talks = [
   },
   {
     event: 'React Fest',
-    name: "The lonely and dark road to Styling in React",
+    name: 'The lonely and dark road to Styling in React',
     date: new Date(2018, 2, 9),
     done: !!isPast(new Date(2018, 2, 9)),
     location: 'London, UK'

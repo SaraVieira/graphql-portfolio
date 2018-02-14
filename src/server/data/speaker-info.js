@@ -28,9 +28,8 @@ module.exports = {
         "Apollo has given us freedom and happiness when it comes to managing our data coming from the server but we still had to write code and sometimes a lot of it to manage our local state? Well, what if we managed it with queries too? Sounds too awesome right? Let's learn how to do this with apollo-link-state"
     },
     {
-      name: "The Lonely and Dark Road to Styling in React",
-      description:
-        `CSS is hard !I made a living out of it being hard but when React was introduced we had a whole new level of fighting over CSS, there are so many ways to approach it and so many tradeoffs one can do when choosing the better approach that a talk that will go over these options is more than necessary.
+      name: 'The Lonely and Dark Road to Styling in React',
+      description: `CSS is hard !I made a living out of it being hard but when React was introduced we had a whole new level of fighting over CSS, there are so many ways to approach it and so many tradeoffs one can do when choosing the better approach that a talk that will go over these options is more than necessary.
         Let's walk this road thogheter and I promise it will all be fine and you will leave with an ideia of type of styling is better for each project.
 Hint: There is no perfect way ....`
     }
