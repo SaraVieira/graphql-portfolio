@@ -2,7 +2,7 @@ module.exports = [
   {
     name: 'Isthereuber.in',
     description:
-      'A webiste that tells you if there is uber or other drive sharing apps in the city you type in',
+      'A website that tells you if there is uber or other drive sharing apps in the city you type in',
     github: 'https://github.com/SaraVieira/uber-cities',
     website: 'https://isthereuber.in'
   },
